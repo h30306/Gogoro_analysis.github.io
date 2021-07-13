@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "103~106 台灣發電結構差異"
+	},
+	axisX: {
+		interval: 1,
+        valueFormatString: "String"
+	},
+	axisY: {
+		title: "單位 億度"
+	},
+	legend: {
+		verticalAlign: "top",
+		horizontalAlign: "right",
+		dockInsidePlotArea: true
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+		name: "106",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(255, 51, 0, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 112.5 },
+			{ label: "汽電共生", y: 41.4 },
+            { label: "抽蓄水力", y: 33.2 },
+			{ label: "核能", y: 215.6 },
+            { label: "燃油", y: 111.7 },
+			{ label: "燃氣", y: 891.2 },
+			{ label: "燃煤", y: 905.2 }
+		]
+	},
+	{
+		name: "105",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(0, 102, 255, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 116 },
+			{ label: "汽電共生", y: 59.2 },
+            { label: "抽蓄水力", y: 32.9 },
+            { label: "核能", y: 304.6 },
+            { label: "燃油", y: 100.3 },
+			{ label: "燃氣", y: 811.9 },
+			{ label: "燃煤", y: 833.1 }
+		]
+	},
+    {
+        name: "104",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(255, 204, 0, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 92.9 },
+			{ label: "汽電共生", y: 62.3 },
+            { label: "抽蓄水力", y: 30.2 },
+            { label: "核能", y: 351.4 },
+            { label: "燃油", y: 102.6 },
+			{ label: "燃氣", y: 769.2 },
+			{ label: "燃煤", y: 782.4 }
+		]
+    },
+    {
+        name: "103",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(51, 204, 51, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 87.9 },
+			{ label: "汽電共生", y: 70 },
+            { label: "抽蓄水力", y: 31.1 },
+            { label: "核能", y: 408 },
+            { label: "燃油", y: 62.4 },
+			{ label: "燃氣", y: 709.2 },
+			{ label: "燃煤", y: 823.7 }
+		]
+    }]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

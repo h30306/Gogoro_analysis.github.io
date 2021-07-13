@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>蝦米碗糕-讓我們試試電動車吧！</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A responsive web for electric motors' data and trend.">
+        <link rel="icon" href="./images/Gogoro_Powerloop_Mobile.jpg" sizes="any" type="image/jpg">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+        <link rel="stylesheet" href="./css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-black-l1 w3-card w3-left-align w3-large">
+                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue-grey-d2" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+                <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">蝦米碗糕</a>
+                <a href="info_graphic.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Info-graphics</a>
+                <a href="./team1.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">組員介紹</a>
+                <a href="%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">參考資料</a>
+            </div>
+            <!-- progress bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="mybar"></div>
+            </div>
+            
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+                <a href="/brianpat-datavisual-1.github.io/info_graphic.html" class="w3-bar-item w3-button w3-padding-large">Info-graphics</a>
+                <a href="/brianpat-datavisual-1.github.io/team1.html" class="w3-bar-item w3-button w3-padding-large">組員介紹</a>
+                <a href="/brianpat-datavisual-1.github.io/%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99.html" class="w3-bar-item w3-button w3-padding-large">參考資料</a>
+            </div>
+        </div>
+        
+        <!-- header -->
+        <header class="w3-display-container w3-center w3-text-white">
+            <div class="parallax"></div>
+            <div class="w3-display-middle w3-container">
+                <h1 class="w3-jumbo">太油太燃太吵 ?</h1>
+                <h1 class="w3-jumbo">讓我們試試電動車吧！</h1>
+                <br>
+            </div>
+        </header>
+        <br>
+        
+        <!-- 引言 -->
+        <div class="w3-content w3-row-padding-">
+            <div class="w3-panel w3-card-2 w3-light-grey" id="t1">
+            <h2>為什麼我們要探討它？</h2>
+            <h5 class="w3-padding">在台灣平均每100個人有59個人有機車，統計到2018年的九月，目前有掛牌的機車數已經達到13,825,385輛，就算在擁有各地方政府分別的補助下，電動機車的掛牌數仍舊微乎其微，僅有164,877的掛牌數，佔整個機慢車的1.19%。</h5>
+            </div>
+            <br>
+            <br>
+            <div class="w3-panel w3-card-2 w3-amber-l3">
+            <h2>And How?</h2>
+                <h5 class="w3-padding">我們從實際可量化的數據中找尋真相與答案，分析出在配合環保意識下，究竟是燃油機車，還是電動機車較適合民眾所使用。我們客觀地從<b>消費者面向、能源結構面向</b>以及<b>全球產業趨勢</b>去做綜合性評估，提供消費者一個客製化的用車建議，亦可以提供政府在未來是否將持續推動電動機車的發展。</h5>
+            </div>
+            <br><br>
+        </div>
+
+        
+        <!-- 價格差異圖 --> 
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <h1 class="w3-center"><b>消費者面向</b></h1>
+            <br>
+            <div class="w3-content">
+                <div>
+                <hr>
+                <h3>一般機車與電動機車的補助金額差異</h3>
+                <div class="w3-container">
+                    <h5>我們油車使用市面上主要車種（SYM、YAMAHA、KYMCO），來和 Gogoro2 系列作一個比較。</h5>
+                </div>
+                <br>
+                <br>
+                <div class="w3-center" id="chartContainer1" style="height: 300px; width: 90%;">
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- 各地補助差異圖 -->
+        <div class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <hr>
+                <h3>台灣各地補助金額</h3>
+                <div class="w3-third">
+                    <h5 class="w3-padding">Gogoro 電動機車地方補助</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <img src="images/%E9%9B%BB%E5%8B%95%E8%BB%8A%E8%A3%9C%E5%8A%A9.png" alt="電動車補助" style="width: 60%; height: 50%">
+                </div>
+                <br>
+                <br>
+                <div class="w3-third">
+                    <h5 class="w3-padding">一般摩托車地方補助</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <img src="images/%E6%A9%9F%E8%BB%8A%E8%A3%9C%E5%8A%A9.png" alt="機車補助" style="width: 60%; height: 50%">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 一般機車與gogoro的保養費用差異 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+        <!-- 算法講解-->
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>一般機車與 Gogoro 的保養費用差異</h3>
+                    <div class="w3-container">
+                        <h5>Gogoro 不用再額外花費任何保養費用喔！</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 圖 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-center">
+                    <h3>一般機車保養費用</h3>
+                    <img class="w3-center" src="images/%E4%B8%80%E8%88%AC%E6%A9%9F%E8%BB%8A%E5%83%B9%E6%A0%BC.png" alt="一般機車價格" style="width: 70%">
+                </div>
+                <div class="w3-center">
+                    <h3>Gogoro 保養費用</h3>
+                    <img class="w3-center" src="images/gogoro%E5%83%B9%E6%A0%BC.png" alt="gogoro保養費用" style="width: 50%" height="40%">
+                </div>
+            </div>
+        </div>
+        <!-- 不同需求之便利性評比 --> 
+        <div id="g2" class="w3-row-padding w3-padding-64w3-container">
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>不同需求之便利性評比</h3>
+                    <div class="w3-container">
+                        <h5>可以觀察到各大都市如台北、新北、台南、高雄，加油站與充電站的密度相差並不大，但由於加油站經年累月的累積，使它的輻散區很大，連帶都市附近的城市也都有極高的密度。</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 圖 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">加油站分佈圖</h3>
+                    <h5 class="w3-padding">紅色越深代表密度越高，黃色則次之，完全沒有其分佈的則為綠色。</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <img src="images/gasstation_densityclear.png" alt="加油站分佈" style="width: 120%">
+                </div>
+                <div class="w3-third">
+                    <h3 class="w3-padding">充電站分布圖</h3>
+                    <h5 class="w3-padding">紅色越深代表密度越高，黃色則次之，完全沒有其分佈的則為綠色。</h5>
+                </div>
+                <div class="w3-twothird">
+                    <img src="images/gogoroclear.png" alt="充電站分布圖" style="width: 120%">
+                </div>
+            </div>
+        </div>
+        
+        <!-- 平均能耗費用差異 -->
+        <div class="w3-row-padding w3-container">
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>平均能耗費用差異</h3>
+                    <div class="w3-container">
+                        <h5>各個用途下的燃油機車與gogoro在不同月行駛里程的費用比較</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 圖 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">100 公里</h3>
+                    <h3 class="w3-padding">300 公里</h3>
+                    <h3 class="w3-padding">600 公里</h3>
+                </div>
+                <div class="w3-twothird w3-center w3-padding">
+                    <img src="images/Webp.net-gifmaker.gif" alt="100 300 600公里能耗" style="width: 100%; height: 30%">
+                </div>
+                <div class="w3-third">
+                    <h3 class="w3-padding">在 100、300、600 公里 情況下，每天應行駛多少公里，才能使騎 Gogoro 的能源費小於燃油機車</h3>
+                </div>
+                <div class="w3-twothird w3-center w3-padding-64">
+                    <div id="chartContainer17" style="height: 300px; width: 100%;"></div>
+                </div>
+                <div class="w3-third">
+                    <h3 class="w3-padding">在吃到飽的情況下，每天應行駛多少公里，才能使騎 Gogoro 的能源費小於燃油機車</h3>
+                    <h5 class="w3-padding">淡水到東吳大學15.8 公里</h5>
+                    <h5 class="w3-padding">新店到東吳17.7 公里</h5>
+                    <h5 class="w3-padding">林口高中到東吳大學21.2 公里</h5>
+                </div>
+                <div class="w3-twothird w3-center w3-padding-64">
+                    <div id="chartContainer18" style="height: 300px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 消費結論-->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+            <div class="w3-content">
+                <hr>
+                <h3 class="w3-padding">通勤族推薦</h3>
+                <h5 class="w3-padding">根據資料顯示，在政府大力推廣的時空背景下，電動機車的補助大大高於燃油機車，再加以每月騎乘距離在600公里以上時，也就是單趟里程高於15公里，電動機車的燃料費便會高於燃油機車，於是乎我們可以誠心的推薦，只要你居住在郊區且每天要往返市區通勤，電動機車便是你的最佳選擇。</h5>
+            </div>
+        </div>
+        
+        
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <h1 class="w3-center"><b>能源結構面向</b></h1><br>
+        <!-- 算法講解-->
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>首先，我們以現階段1300多萬輛機車皆為電動機車的情況下去做假設:</h3>
+                    <div class="w3-container">
+                        <h5>我們使用交通部統計處 105 年的「機車使用狀況調查報告」，作爲機車車輛數與使用狀況的依據。</h5>
+                        <h5>發現105 年底機車登記為 1,367 萬輛，約 38 萬輛 (2.8%) 未使用，總計為 <b>1329</b> 萬輛使用中。</h5>
+                        <h5>機車使用狀況：平均一天行駛 13.3 km ， 平均每星期使用天數 5.1 天 (以一年 53 個星期來看)，平均一年行駛 3,594.99 km。</h5>
+                        <h5>接下來，我們依工研院所提供，電動機車每公里耗電量約為 0.024 kWh/km。</h5>
+                        <br>
+                        <h5>3,594.99 Ｘ 0.024 Ｘ 1329 萬輛 ＝ 電動機車每年總耗電量約為 <b>1,146,658,010.4</b>  kWh。</h5>
+                        <h5>看起來是一大數目對吧！不過其實它其實只佔 105 年總發電量的 <b>0.508 % </b>!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 估算電動機車所佔105年總發電量的比例-->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">電動機車總耗電量佔105年總發電量的比例</h3>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer11" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>    
+        <!-- 105台灣能源結構圖 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">105年台灣發電量結構</h3>
+                    <h5 class="w3-padding">燃煤的火力發電依然是台灣主要的發電來源，大家 PM2.5 吸好吸滿，一個乾淨的煤沒了還有千千萬萬的煤。</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer10" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+        <!-- 算法講解-->
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>第二，我們以 105 年夏日尖峰時段去做假設：</h3>
+                    <div class="w3-container">
+                        <h5>105 年夏日尖峰負載為7月28日之 3,586 萬瓩 = 35860 kWh</h5>
+                        <h5>我們以 0.508 % 的比例下去計算，35860 X 0.508 % = 夏日尖峰時段電動機車總耗電量約為 182.1688 MW。</h5>
+                        <h5>從以下圖中，我們可以發現電動車所佔的用電比例也是非常的少！</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--電動機車在夏日尖峰時段所佔發電裝置容量比例 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">電動機車在夏日尖峰時段所佔發電裝置容量比例</h3>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer12" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 105年台灣電力裝置結構-->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h2 class="w3-padding">105年台灣電力裝置結構</h2>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer13" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+        <!-- 算法講解-->
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>第三，我們要探討電動機車與一般燃油機車的碳排放量差異：</h3>
+                    <div class="w3-container">
+                        <h5>碳排放係數依據為何？</h5>
+                        <h5>以國際能源總署(International Energy Agency, IEA)統計方法建議，105 年台灣電力排放係數為 <b>0.53</b> kg CO2/度。</h5>
+                        <h5>如何得知燃油機車的碳排？</h5>
+                        <h5>我們以工研院提供的算法做參考，CO2 排放量 = 車輛數 X 年行駛里程 X 碳排放係數 X 修正係數 。</h5>
+                        <h5>（修正係數皆趨近於 1 ，故不考慮）</h5>
+                        <h5>電動機車碳排 ＝ 105 年總耗電量 Ｘ 0.53 ＝ 607,728,745.512（kg CO2e / 度)</h5>
+                        <h5>125cc.燃油機車碳排 ＝ 車輛數 Ｘ 年行駛里程 Ｘ 0.06 ＝ 2,866,645,026 （kg CO2e / 度）</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 105年電動機車與一般機車碳排比較 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">105年一般機車與電動機車之碳排比較</h3>
+                    <h5 class="w3-padding">這個差距似乎沒理由不支持推動電動機車了</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer14" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 能源解釋 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div>
+                    <div class="w3-container"> 
+                        <h5>電動車是否真的環保，還有一項必須考量的因素就是其發電的來源。</h5>
+                        <h5>換而言之，也就是看一個國家的發電結構，是否真的環保。</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 103～106年發電量結構變化 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">103～106年發電量結構變化</h3>
+                    <h5 class="w3-padding">再生能源比例有增加，不過效果非常有限。核能使用明顯降低，相對而言，台灣使用火力發電比例明顯增加，空氣品質堪憂。</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer9" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 電力排放係數 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">94年～106年電力排放係數</h3>
+                    <h5 class="w3-padding">在103年有下降的趨勢，不過近年開始不減反增，甚至與民國 94 年有相近的數值。</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer16" style="height: 300px; width: auto;"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+        <!-- 圖片解釋-->
+            <div class="w3-content">
+                <div>
+                    <hr>
+                    <h3>最後，我們來了解電動車與一般燃油車能源轉換效率的差別：</h3>
+                    <br>
+                    <div class="w3-container w3-twothird">
+                        <img src="./images/electric_car.jpg" style="height: auto; width: auto">
+                    </div>
+                    <div class="w3-padding w3-third">
+                        <h5>從左圖可知，電動車引擎所產生的動力，最終會有 77% ~ 82% 提供給輪胎使用，是相當高的能源轉換效率。</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-content">
+                <div>
+                    <div class="w3-container w3-twothird">
+                        <img src="./images/car.jpg" style="height: auto; width: auto">
+                    </div>
+                    <div class="w3-padding w3-third">
+                        <h5>然而，一般汽車引擎在燃燒石油，提供輪胎本身的動力只剩 16% ~ 25%。</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 電動車與一般燃油車之能源轉換效率比較 -->
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container w3-blue-grey-d5">
+            <div class="w3-content">
+                <div class="w3-third">
+                    <h3 class="w3-padding">電動車與一般燃油車之能源轉換效率比較</h3>
+                    <h5 class="w3-padding">電動車的能源轉換效率極高</h5>
+                </div>
+                <div class="w3-twothird w3-center">
+                    <div id="chartContainer15" style="height: 300px; width: auto;"></div>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div id="g2" class="w3-row-padding w3-padding-64 w3-container">
+            <h1 class="w3-center w3-content w3-container"><b>2018 GEVO 電動車未來產業趨勢</b><hr></h1><br>
+        <!-- 算法講解-->
+            <div class="w3-content w3-card-4 w3-deep-purple-d2">
+                <div>
+                    <div class="w3-container">
+                        <div class="w3-quarter w3-center">
+                            <br>
+                            <br>
+                            <br>
+                            <img src="images/001-lightbulb.png" style="width: 50%">
+                        </div>
+                        <div class="w3-threequarter">
+                            <h3>Fact 1: 電池越來越便宜，效能也越來越好</h3>
+                            <p><span style="color: limegreen; font-size: 35px">&#9660;791 USD/kWh</span></p>
+                            <h4 class="w3-padding">2010 ~ 2017 電動車電池每千瓦減少了 791 美元</h4>
+                            <p><span style="color: red; font-size: 35px">&#9650;93.8 GWh</span></p>
+                            <h4 class="w3-padding">2010 ~ 2017 電動車電池容量增加了 93.8 GWh</h4>
+                        </div>
+                        <div class="w3-quarter w3-center">
+                            <br>
+                            <br>
+                            <br>
+                            <img src="images/002-car.png" style="width: 50%">
+                        </div>
+                        <div class="w3-threequarter">
+                            <hr>
+                            <h3>Fact 2 :  電動車產業前景看好</h3>
+                            <p><span style='font-size:35px; color: mediumspringgreen' class='far'>&#xf058; 117.6 million vehicles</span></p>
+                            <h4 class="w3-padding">2030 年預計增加 1億1760 萬輛純電動車（BEV)</h4>
+                            <p><span style='font-size:35px; color:springgreen' class='far'>&#xf058; 80.6 million vehicles</span></p>
+                            <h4 class="w3-padding">2030 年預計增加 8千萬量插電式混合動力汽車(PHEV）</h4>
+                        </div>
+                        <div class="w3-quarter w3-center">
+                            <br>
+                            <br>
+                            <img src="images/003-sprout.png" style="width: 50%">
+                        </div>
+                        <div class="w3-threequarter">
+                            <hr>
+                            <h3>Fact 3 :  電動車可以幫助減少大量碳排</h3>
+                            <p><span style="color: limegreen; font-size: 35px">&#9660;41,242,000 kg CO2e</span></p>
+                            <h4 class="w3-padding">台灣 Gogoro 至今所減少的 CO2 排放量，約等於 4,124,200 棵樹的吸收量</h4>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-center w3-opacity w3-black">
+            <div class="w3-xlarge w3-padding-32">
+                <i class='fab fa-facebook' style='font-size:36px'></i>
+                <i class='fab fa-instagram' style='font-size:36px'></i>
+                <i class='fab fa-linkedin' style='font-size:36px'></i>
+            </div>
+            <h4>By 東吳大學巨資系 視覺化第七組 蝦米碗糕</h4>
+            <br>
+            <h5>製作</h5>
+            <h5>Brian Huang  黃柏嵃</h5>
+            <br>
+        </footer>
+        
+        <!-- progressive bar script-->
+        <script>
+            // // When the user scrolls the page, execute myFunction 
+            window.onscroll = function() {myfunction()};
+            
+            function myfunction() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100; document.getElementById("mybar").style.width = scrolled + "%";
+            }
+            
+        </script>
+        
+        <script>
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else { 
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+        </script>
+        
+        <!-- target scrolling -->
+        <script>
+            $('a[href="#g1"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+            });
+            
+            
+        </script>
+        
+<!-- Graphs -->
+ <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	title:{
+		text: "機車與電動機車的補助金額差異"
+	},	
+    axisX: {
+        labelFontSize: 16,
+    },
+	axisY: {
+		title: "NT$",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor:"pointer",
+		itemclick: toggleDataSeries,
+	},
+	data: [{
+		type: "column",
+		name: "原價",
+		legendText: "原價",
+		showInLegend: true,
+		dataPoints:[
+			{ y: 84200, label: "Racing S 125" },
+			{ y: 84000, label: "Jet S 125" },
+			{ y: 83700, label: "勁戰 125" },
+          	{ y: 73800, label: "Gogoro 2"},
+          	{ y: 79800, label: "Gogoro 2 Plus"},
+          	{ y: 95800, label: "Gogoro S2"}
+		]
+	},
+	{
+		type: "column",	
+		name: "平均補助",
+		legendText: "平均補助",
+		showInLegend: true,
+		dataPoints:[
+			{ y: 2050, label: "Racing S 125" },
+			{ y: 2050, label: "Jet S 125" },
+			{ y: 2050, label: "勁戰 125" },
+          	{ y: 24500, label: "Gogoro 2"},
+          	{ y: 24500, label: "Gogoro 2 Plus"},
+          	{ y: 24500, label: "Gogoro S2"}
+		]
+	},
+    {
+        type: "column",
+        name: "實際購買價格",
+        legendText: "實際購買價格",
+        showInLegend: true,
+        dataPoints:[
+            { y: 82150, label: "Racing S 125" },
+			{ y: 81950, label: "Jet S 125" },
+			{ y: 81650, label: "勁戰 125" },
+          	{ y: 49300, label: "Gogoro 2"},
+          	{ y: 55300, label: "Gogoro 2 Plus"},
+          	{ y: 71300, label: "Gogoro S2"}
+        ]
+           }]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else {
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+// Graph9 台灣電力結構變化
+var chart = new CanvasJS.Chart("chartContainer9", {
+	animationEnabled: true,
+    theme: "dark2",
+	title: {
+		text: "103~106年台灣發電結構變化"
+	},
+	axisX: {
+		interval: 1,
+        valueFormatString: "String",
+        labelFontSize: 16
+	},
+	axisY: {
+		title: "單位 億度"
+	},
+	legend: {
+		verticalAlign: "top",
+		horizontalAlign: "right",
+		dockInsidePlotArea: true
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+		name: "106",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(255, 102, 0, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 112.5},
+			{ label: "汽電共生", y: 41.4 },
+            { label: "抽蓄水力", y: 33.2 },
+			{ label: "核能", y: 215.6 },
+            { label: "燃油", y: 111.7 },
+			{ label: "燃氣", y: 891.2 },
+			{ label: "燃煤", y: 905.2 }
+			
+		]
+	},
+	{
+		name: "105",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(0, 102, 255, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 116},
+			{ label: "汽電共生", y: 59.2 },
+            { label: "抽蓄水力", y: 32.9 },
+            { label: "核能", y: 304.6 },
+            { label: "燃油", y: 100.3 },
+			{ label: "燃氣", y: 811.9 },
+			{ label: "燃煤", y: 833.1 }
+			
+			
+		]
+	},
+    {
+        name: "104",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(255, 204, 0, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 92.9 },
+			{ label: "汽電共生", y: 62.3 },
+            { label: "抽蓄水力", y: 30.2 },
+            { label: "核能", y: 351.4 },
+            { label: "燃油", y: 102.6 },
+			{ label: "燃氣", y: 769.2 },
+			{ label: "燃煤", y: 782.4 }
+		]
+    },
+    {
+        name: "103",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(51, 204, 51, 0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ label: "再生能源", y: 87.9 },
+			{ label: "汽電共生", y: 70 },
+            { label: "抽蓄水力", y: 31.1 },
+            { label: "核能", y: 408 },
+            { label: "燃油", y: 62.4 },
+			{ label: "燃氣", y: 709.2 },
+			{ label: "燃煤", y: 823.7 }
+		]
+    }]
+});
+chart.render();
+
+ 
+
+            
+// Graph9 台灣電力結構
+var chart = new CanvasJS.Chart("chartContainer10", {
+	theme: "dark2",
+	animationEnabled: true,
+	title: {
+		text: "105年台灣電力發電結構"
+	},
+    theme: "dark2",
+	data: [{
+		type: "pie",
+		indexLabelFontSize: 18,
+		radius: 100,
+		indexLabel: "{label} - {y}",
+		yValueFormatString: "###0.0\"%\"",
+		click: explodePie,
+		dataPoints: [
+			{ y: 5.1, label: "再生能源" },
+			{ y: 2.6, label: "汽電共生"},
+			{ y: 36, label: "燃氣" },
+			{ y: 4.4, label: "燃油" },
+			{ y: 36.9, label: "燃煤" },
+            { y: 1.5, label: "抽蓄水力"},
+            { y: 13.5, label: "核能"}
+		]
+	}]
+});
+chart.render();
+    
+function explodePie(e) {
+	for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+		if(i !== e.dataPointIndex)
+			e.dataSeries.dataPoints[i].exploded = false;
+	}
+}
+    
+// 電動車所佔105年發電量比例   
+var chart = new CanvasJS.Chart("chartContainer11", {
+	animationEnabled: true,
+    theme: "dark2",
+	title:{
+		text: "估算電動機車所佔105年總發電量的比例",
+	},
+	data: [{
+		type: "doughnut",
+		startAngle: 60,
+		//innerRadius: 60,
+		indexLabelFontSize: 17,
+		indexLabel: "{label} - #percent%",
+		toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+		dataPoints: [
+			{ y: 99.492, label: "剩餘總發電量比例" },
+			{ y: 0.508, label: "電動車所佔總發電量比例" }
+		]
+	}]
+});
+chart.render();
+    
+// 電動機車所佔裝置容量比例
+    
+var chart = new CanvasJS.Chart("chartContainer12", {
+	animationEnabled: true,
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "電動機車所佔發電裝置容量比例"
+	},
+	axisY: {
+		title: "",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "四類發電裝置",
+        labelFontSize: 16
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "核能", y: 3.54 },	
+			{ label: "抽蓄水力", y: 7 },
+            { label: "火力", y: 0.605 },
+			{ label: "再生能源", y: 4.21 }
+		]
+	}]
+});
+chart.render();
+    
+// 105年台灣電力裝置容量結構
+var chart = new CanvasJS.Chart("chartContainer13", {
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	animationEnabled: true,
+	title: {
+		text: "105年台灣電力裝置容量結構"
+	},
+    axisX: {
+        labelFontSize: 16,
+    },
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: [
+			{ y: 12.2, label: "核能" },
+			{ y: 6.2, label: "抽蓄水力" },
+            { y: 71.4, label: "火力" },
+			{ y: 10.3, label: "再生能源" }
+		]
+	}]
+});
+chart.render();
+    
+// 105年電動機車與一般機車碳排放比較
+var chart = new CanvasJS.Chart("chartContainer14", {
+	animationEnabled: true,
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "105年電動機車與燃油機車之碳排放量比較"
+	},
+	axisY: {
+		title: "kg CO2e/度"
+	},
+    axisX: {
+        labelFontSize: 16,
+    },
+	data: [{        
+		type: "column",  
+		dataPoints: [      
+			{ y: 2866645026,  label: "125cc.燃機油機車" },
+            { y: 607728745.5 , label: "電動機車" }
+		]
+	}]
+});
+chart.render();
+
+// 電動車與一般燃油車之能源轉換效率比較
+var chart = new CanvasJS.Chart("chartContainer15", {
+	animationEnabled: true,
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "電動車與一般燃油車之能源轉換效率比較%"
+	},
+	axisY: {
+		valueFormatString: "#",
+	},
+    axisX: {
+        labelFontSize: 16,
+    },
+	data: [{        
+		type: "column",  
+		dataPoints: [      
+			{ y:  20.5, label: "一般燃油車" },
+			{ y: 79.5,  label: "電動車" },
+		]
+	}]
+});
+chart.render();
+    
+// 電力排放數
+var chart = new CanvasJS.Chart("chartContainer16", {
+	animationEnabled: true,  
+	title:{
+		text: "台灣電力排放係數"
+	},
+    theme: "dark2",
+	axisY: {
+		title: "電力排放係數",
+		valueFormatString: "#.###",
+		suffix: "kg CO2e",
+		stripLines: [{
+			value: 0.539,
+			label: "Average"
+		}]
+	},
+    axisX: {
+        valueFormatString: "string",
+        title: "民國",
+        labelFontSize: 16,
+    },
+	data: [{
+		yValueFormatString: "0.### kg CO2e",
+		xValueFormatString: "##",
+		type: "spline",
+		dataPoints: [
+			{label: "94", y: 0.555},
+			{label: "95", y: 0.562},
+			{label: "96", y: 0.558},
+			{label: "97", y: 0.555},
+			{label: "98", y: 0.543},
+			{label: "99", y: 0.534},
+			{label: "100", y: 0.534},
+			{label: "101", y: 0.529},
+			{label: "102", y: 0.519},
+			{label: "103", y: 0.518},
+			{label: "104", y: 0.525},
+			{label: "105", y: 0.530},
+			{label: "106", y: 0.554}
+		]
+	}]
+});
+chart.render();
+    
+// Gogoro 里程比較
+var chart = new CanvasJS.Chart("chartContainer17", {
+	animationEnabled: true,
+	
+	title:{
+		text:"當購賣此gogoro月騎乘里程時，每日單趟通勤里程最遠距離為何"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "km"
+	},
+	data: [{
+		type: "bar",
+		name: "類別",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 2.272727273, label: "100 公里" },
+			{ y: 6.818181818, label: "300 公里" },
+			{ y: 13.63636364, label: "600 公里" },
+		]
+	}]
+});
+chart.render();
+    
+// Gogoro 里程比較1
+var chart = new CanvasJS.Chart("chartContainer18", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Gogoro 吃到飽里程比較"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of km"
+	},
+	data: [{
+		type: "bar",
+		name: "類別",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 21.0730865, label: "綁約3個月" },
+			{ y: 17.55797616, label: "綁約兩年" },
+			{ y: 15.80042099, label: "綁約三年" },
+		]
+	}]
+});
+chart.render();
+ 
+}
+        </script>
+        
+
+    
+    </body>
+
+</html>

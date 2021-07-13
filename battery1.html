@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "Server CPU Utilization vs Active Users"
+	},
+	axisX: {
+		title: "Active Users"
+	},
+	axisY: {
+		title: "CPU Utilization",
+		suffix: "%"
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "scatter",
+		name: "Electronics",
+		showInLegend: true,
+        markerColor: "#009900",
+		toolTipContent: "<span style=\"color:#33cc33 \">{name},{label}</span><br>{x} GWh<br>{y} USD/kWh",
+		dataPoints: [
+			{ x: 0.9, y: 3158 ,label: "1995"},
+            { x: 2.1, y: 2945 ,label: "1996"},
+            { x: 3.6, y: 2860 ,label: "1997"},
+            { x: 6.2, y: 2485 ,label: "1998"},
+            { x: 10.0 , y:1782 ,label: "1999"},
+            { x: 12.2, y: 1597 ,label: "2000"},
+            { x: 14.9, y: 1369 ,label: "2001"},
+            { x: 18.6, y: 994 ,label: "2002"},
+            { x: 24.1, y: 830 ,label: "2003"},
+            { x: 31.4, y: 820 ,label: "2004"},
+            { x: 40.4, y: 600 ,label: "2005"},
+            { x: 52.2, y: 552 ,label: "2006"},
+            { x: 66.2, y: 538 ,label: "2007"},
+            { x: 83.4, y: 533 ,label: "2008"},
+            { x: 101.7, y: 435 ,label: "2009"},
+            { x: 122.7, y: 366 ,label: "2010"},
+            { x: 147.2, y: 320 ,label: "2011"},
+            { x: 173.4, y: 302 ,label: "2012"},
+            { x: 202.4, y: 282 ,label: "2013"},
+            { x: 232.2, y: 268 ,label: "2014"},
+            { x: 262.4, y: 261 ,label: "2015"},
+            { x: 293.4, y: 248 ,label: "2016"},
+		
+		]
+	},
+	{
+		type: "scatter",
+		name: "Electric vehicles",
+		showInLegend: true,
+		markerColor: "#00cc00",
+		toolTipContent: "<span style=\"color:#4F81BC \">{name},{label}</span><br>{x} GWh<br>{y} USD/kWh",
+		dataPoints: [
+			{ x: 0.4, y: 1000 ,label: "2010"},
+            { x: 1.3, y: 800 ,label: "2011"},
+            { x: 3.4, y: 642 ,label: "2012"},
+            { x: 8.3, y: 599 ,label: "2013"},
+            { x: 15.4, y: 540 ,label: "2014"},
+            { x: 27.2, y: 350 ,label: "2015"},
+            { x: 48.1, y: 273 ,label: "2016"},
+            { x: 94.2, y: 209 ,label: "2017"},
+		]
+	},
+    {
+		type: "scatter",
+		name: "Residential storage",
+		showInLegend: true,
+		markerColor: "#0066cc",
+		toolTipContent: "<span style=\"color:#4F81BC \">{name},{label}</span><br>{x} GWh<br>{y} USD/kWh",
+		dataPoints: [
+			{ x: 0.1, y: 2655 ,label: "2013"},
+            { x: 0.2, y: 2358 ,label: "2014"},
+            { x: 0.4, y: 1929 ,label: "2015"},
+            { x: 0.6, y: 1634 ,label: "2016"}
+		]
+	},
+    {
+        type: "scatter",
+		name: "Utility storage",
+		showInLegend: true,
+		markerColor: "#3399ff",
+		toolTipContent: "<span style=\"color:#4F81BC \">{name},{label}</span><br>{x} GWh<br>{y} USD/kWh",
+		dataPoints: [
+			{ x: 0, y: 2120 ,label: "2010"},
+            { x: 0.1, y: 1831 ,label: "2011"},
+            { x: 0.2, y: 1677 ,label: "2012"},
+            { x: 0.3, y: 1619 ,label: "2013"},
+            { x: 0.4, y: 1473 ,label: "2014"},
+            { x: 0.5, y: 1266 ,label: "2015"},
+		]
+    }]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</body>
+</html>

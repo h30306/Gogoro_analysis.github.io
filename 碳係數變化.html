@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,  
+	title:{
+		text: "台灣電力排放係數"
+	},
+    theme: "dark2",
+	axisY: {
+		title: "電力排放係數",
+		valueFormatString: "#.###",
+		suffix: "kg CO2e",
+		stripLines: [{
+			value: 0.539,
+			label: "Average"
+		}]
+	},
+    axisX: {
+        valueFormatString: "string",
+        title: "民國",
+        labelFontSize: 16,
+    },
+	data: [{
+		yValueFormatString: "0.### kg CO2e",
+		xValueFormatString: "##",
+		type: "spline",
+		dataPoints: [
+			{label: "94", y: 0.555},
+			{label: "95", y: 0.562},
+			{label: "96", y: 0.558},
+			{label: "97", y: 0.555},
+			{label: "98", y: 0.543},
+			{label: "99", y: 0.534},
+			{label: "100", y: 0.534},
+			{label: "101", y: 0.529},
+			{label: "102", y: 0.519},
+			{label: "103", y: 0.518},
+			{label: "104", y: 0.525},
+			{label: "105", y: 0.530},
+			{label: "106", y: 0.554}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

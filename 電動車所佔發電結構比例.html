@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light1",
+	animationEnabled: true,
+	title: {
+		text: "估算電動機車所佔105年總發電量"
+	},
+	data: [{
+		type: "pie",
+		indexLabelFontSize: 18,
+		radius: 100,
+		indexLabel: "{label} - {y}",
+		yValueFormatString: "###0.0\"%\"",
+		click: explodePie,
+		dataPoints: [
+			{ y: 99.492, label: "剩餘總發電量比例" },
+			{ y: 0.508, label: "電動車所佔總發電量比例"}
+		]
+	}]
+});
+chart.render();
+
+function explodePie(e) {
+	for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+		if(i !== e.dataPointIndex)
+			e.dataSeries.dataPoints[i].exploded = false;
+	}
+}
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 420px; width: 100%;">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</body>
+</html>

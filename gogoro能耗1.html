@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+	
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Gogoro 吃到飽里程比較"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of km"
+	},
+	data: [{
+		type: "bar",
+		name: "類別",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 21.0730865, label: "綁約3個月" },
+			{ y: 17.55797616, label: "綁約兩年" },
+			{ y: 15.80042099, label: "綁約三年" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

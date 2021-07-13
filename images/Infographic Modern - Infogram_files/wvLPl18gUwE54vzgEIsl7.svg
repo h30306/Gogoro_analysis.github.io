@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Resposive-in-Flex-UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Document-settings-(responsive)-Copy-4" transform="translate(-16.000000, -959.000000)" fill="#FFFFFF">
+            <g id="Group-4" transform="translate(16.000000, 959.000000)">
+                <rect id="Rectangle-11" x="4" y="0" width="2" height="16"></rect>
+                <rect id="Rectangle-11-Copy" x="10" y="0" width="2" height="16"></rect>
+                <rect id="Rectangle-11" transform="translate(8.000000, 5.000000) rotate(-90.000000) translate(-8.000000, -5.000000) " x="7" y="-3" width="2" height="16"></rect>
+                <rect id="Rectangle-11-Copy" transform="translate(8.000000, 11.000000) rotate(-90.000000) translate(-8.000000, -11.000000) " x="7" y="3" width="2" height="16"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

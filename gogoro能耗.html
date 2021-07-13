@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+	
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Gogoro 不同方案里程比較"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: "Number of km"
+	},
+	data: [{
+		type: "bar",
+		name: "類別",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{ y: 2.272727273, label: "100 公里" },
+			{ y: 6.818181818, label: "300 公里" },
+			{ y: 13.63636364, label: "600 公里" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

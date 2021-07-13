@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-size: 30px;
+}
+.parallax {
+    background-image: url("../images/s2.jpg");
+    
+    min-height: 825px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr { 
+  display: block;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    opacity: 100%;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #66ff99;
+    width: 0%;
+}
+
+
+
+
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+
+h1,h2,h3,h4,h5,h6 {font-family: "Noto+Sans+TC", sans-serif}
+
+header {
+}
+
+.w3-black-l1 {color:#fff !important; background-color:#333333 !important}
+
+.w3-cyan-d2 {color:#fff !important; background-color:#0097ab !important}
+
+.w3-brown-l1 {color:#fff !important; background-color:#a07261 !important}
+
+.w3-blue-grey-d2 {color:#fff !important; background-color:#4d636f !important}
+
+.w3-blue-grey-d3 {color:#fff !important; background-color:#435761 !important}
+
+.w3-blue-grey-d5 {color:#fff !important; background-color:#303e45 !important}
+
+.w3-indigo-d2 {color:#fff !important; background-color:#334191 !important}
+
+.w3-blue-grey-l3 {color:#000 !important; background-color:#becbd2 !important}
+
+.w3-amber-l3 {color:#000 !important; background-color:#ffe69b !important}
+
+.w3-deep-purple-l2 {color:#fff !important; background-color:#a384d8 !important}
+
+.w3-deep-purple-d2 {color:#fff !important; background-color:#532e92 !important}
+
+.w3-dark-grey-d5 {color:#fff !important; background-color:#303030 !important}

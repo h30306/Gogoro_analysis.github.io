@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "dark2",
+	animationEnabled: true,
+	title: {
+		text: "105年台灣電力發電結構"
+	},
+    theme: "dark2",
+	data: [{
+		type: "pie",
+		indexLabelFontSize: 18,
+		radius: 100,
+		indexLabel: "{label} - {y}",
+		yValueFormatString: "###0.0\"%\"",
+		click: explodePie,
+		dataPoints: [
+			{ y: 5.1, label: "再生能源" },
+			{ y: 2.6, label: "汽電共生"},
+			{ y: 36, label: "燃氣" },
+			{ y: 4.4, label: "燃油" },
+			{ y: 36.9, label: "燃煤" },
+            { y: 1.5, label: "抽蓄水力"},
+            { y: 13.5, label: "核能"}
+		]
+	}]
+});
+chart.render();
+function explodePie(e) {
+	for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+		if(i !== e.dataPointIndex)
+			e.dataSeries.dataPoints[i].exploded = false;
+	}
+}
+ 
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 420px; width: 100%;">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
+</body>
+</html>

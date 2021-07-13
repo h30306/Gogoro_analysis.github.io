@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "電動車與一般燃油車之能源轉換效率比較"
+	},
+	axisY: {
+		valueFormatString: "#",
+	},
+    axisX: {
+        labelFontSize: 16,
+    },
+	data: [{        
+		type: "column",  
+		dataPoints: [      
+			{ y:  20.5, label: "一般燃機油幾車" },
+			{ y: 79.5,  label: "電動車" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
